@@ -8,6 +8,5 @@ public class Waypoint : MonoBehaviour
     public Vector3 getPosition()
     {
         return transform.position + new Vector3(0,1,0);
-            
     }
 }

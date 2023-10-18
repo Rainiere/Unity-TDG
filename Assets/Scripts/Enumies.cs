@@ -8,5 +8,5 @@ public enum Enumies
     Ground,
     Aerial,
     Underground,
-    Camouflaged
+    All
 }

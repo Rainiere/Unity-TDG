@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
@@ -8,8 +9,10 @@ public class Enemy : MonoBehaviour
     [SerializeField] private int Speed;
     [SerializeField] private int Damage;
     [SerializeField] private int Health;
+    [SerializeField] private bool Camouflage;
 
-    [SerializeField] private Enumies[] _enumies;
+
+    [SerializeField] private Enumies _enumies;
 
     private playerLevens _player;
     private Path _Path;
@@ -17,9 +20,27 @@ public class Enemy : MonoBehaviour
     private Waypoint _WaypointEnd;
     private Spawner _spawner;
 
-    public Enumies[] GetEnumies()
+    private int Checkpoints;
+    float distanceTo_Waypoint;
+
+    public void SetSpeed(int _Speed)
+    {
+        Speed = _Speed;
+    }
+
+    public Enumies GetEnumies()
     {
         return _enumies;
+    }
+
+    public bool GetCamo()
+    {
+        return Camouflage;
+    }
+
+    public Vector2 getDistance()
+    {
+        return new Vector2(Checkpoints, distanceTo_Waypoint);
     }
 
     void setupPath()
@@ -30,8 +51,19 @@ public class Enemy : MonoBehaviour
         _WaypointEnd = _Path.getLast_Waypoint();
     }
     // Start is called before the first frame update
-
+    public void TakeDamage(int damageToTake)
+    {
+        Health -= damageToTake;
+        if(Health <= 0) { Death(); }
+        
+    }
+    
     void Death()
+    {
+        Destroy(gameObject);
+        _spawner.PingVanEnemy();
+    }
+    void FinishedPath()
     {
         Destroy(gameObject);
         _player.TakeDamage(Damage);
@@ -50,20 +82,32 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.forward*Speed*Time.deltaTime);
-        float distanceTo_Waypoint = Vector3.Distance(transform.position, _currentWaypoint.getPosition());
-    
+        distanceTo_Waypoint = Vector3.Distance(transform.position, _currentWaypoint.getPosition());
+
         if (distanceTo_Waypoint <= 1)
         {
-            if(_currentWaypoint ==  _WaypointEnd)
+            if (_currentWaypoint == _WaypointEnd)
             {
-                Death();
+                FinishedPath();
 
                 return;
             }
             _currentWaypoint = _Path.getNext_Waypoint(_currentWaypoint);
             transform.LookAt(_currentWaypoint.getPosition());
-            
+            Checkpoints++;
+
         }
+        transform.Translate(Vector3.forward * Speed * Time.deltaTime);
     }
 }
+
+//    public float[] DistanceToEnd()
+//    {
+//        float distanceTo_Waypoint = Vector3.Distance(transform.position, _currentWaypoint.getPosition());
+///*        float[] fArray = new float[Checkpoints, distanceTo_Waypoint];*/
+//        Array fArray = new Array[Checkpoints, distanceTo_Waypoint];
+
+//        /*float[] float = new float[];*/
+
+//    }
+//}

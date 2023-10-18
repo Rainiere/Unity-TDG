@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.UI;
 
 [System.Serializable]
 public struct waves {
@@ -17,6 +18,11 @@ public class Spawner : MonoBehaviour
     [SerializeField] private float timeBetweenSpawn;
     [SerializeField] private float timeBetweenWaves;
     [SerializeField] private int waveCount = 0;
+
+    public Text currentWave;
+    public Text currentHealth;
+    public Text currentGold;
+    
     private float waveTimer;
     private int deadEnemies;
     private bool startWave = true;
