@@ -196,15 +196,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 029026141982fc043910b6b258238cd5, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -13.65
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 029026141982fc043910b6b258238cd5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.8
+      value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 029026141982fc043910b6b258238cd5, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 029026141982fc043910b6b258238cd5, type: 3}
       propertyPath: m_LocalRotation.w
@@ -296,5 +296,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GoldValue: 1
+  ProjectileList: []
   STowerLevels: []
-  BulletSpawnPos: {fileID: 4510360614839335966}

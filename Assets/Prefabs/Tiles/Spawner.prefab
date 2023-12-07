@@ -122,7 +122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waveArray: []
   spawnPos: {fileID: 3832014644391667702}
-  timeBetweenSpawn: 0
+  timeBetweenSpawn: 1
   timeBetweenWaves: 0
   waveCount: 0
   Wave: {fileID: 0}
