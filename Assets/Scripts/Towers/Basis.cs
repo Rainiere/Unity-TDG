@@ -6,11 +6,11 @@ using UnityEngine;
 
 public class Basis : MonoBehaviour
 {
-    protected int UpgradeLevel;
-    protected int Damage;
-    protected float FireRate;
-    protected int Range;
-    protected bool Camouflage;
+    [SerializeField] protected int UpgradeLevel;
+    [SerializeField] protected int Damage;
+    [SerializeField] protected float FireRate;
+    [SerializeField] protected int Range;
+    [SerializeField] protected bool Camouflage;
     [SerializeField] protected int GoldValue;
 
     // LayerMask is een uniek iets uit Unity, waarbij je de Layers kunt aanroepen.
@@ -19,7 +19,7 @@ public class Basis : MonoBehaviour
     //Enumies is een enum(Alleen data, geen functies) bestand die wij hier aanroepen zodat die gebruikt kan worden
     // Het is gebruikelijk om een "Local variable" te beginnen met _, een local variable is een variabele die je aanmaakt om een variabele die in een ander
     // script aangemaakt wordt te kunnen gebruiken.
-    private Enumies _targetConditions;
+    private Enumies _targetConditions = Enumies.All;
     protected bool canFire = false;
 
     // Start wordt uitgevoerd zodra het script is geladen, voordat de eerste frame begint.
@@ -52,7 +52,7 @@ public class Basis : MonoBehaviour
         foreach (Collider coll in colls)
         {
             Enemy enemy = coll.GetComponent<Enemy>();
-
+            print(enemy);
             // || betkent "of", && betekent "en", == betekent "is gelijk aan?"
             if ((enemy.GetCamo() == false || Camouflage == true) && (enemy.GetEnumies() == _targetConditions || _targetConditions == Enumies.All))
             {
@@ -65,8 +65,8 @@ public class Basis : MonoBehaviour
     // Protected is vergelijkbaar met private, maar met de extensie dat als iets afgeleid is van hetzelfde script dat je het nog wel kan aanpassen.
     protected Enemy TargetFirstEnemy() {
         Enemy[] enemies = TargetAllEnemy();
-        
         if (enemies.Length == 1) { return enemies[0]; }
+        if (enemies.Length > 0) { print(enemies); }
         // Vector2 gaat over coordinaten op de X en Y as, waarbij vector3 ook nog de Z as pakt.
         Vector2 currentFurthestEnemy = new(-1, Mathf.Infinity);
         Enemy enemyToTarget = null;

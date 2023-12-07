@@ -40,7 +40,6 @@ public class BaseStoreScr : MonoBehaviour
             hitTarget = GetTile();
             if (hitTarget != null && hitTarget.getBuildable() == true)
             {
-            print("Pew");
             int TowerCost = TowerToPlace.getTowerCost();
 
                 int PlayerGold = _player.getPlayerGold();
