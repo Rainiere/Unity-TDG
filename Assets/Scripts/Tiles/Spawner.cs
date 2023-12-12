@@ -28,7 +28,7 @@ public class Spawner : MonoBehaviour
     // Variabelen om bij te houden hoeveel enemies er dood zijn en of de volgende wave gestart mag worden.
     private float waveTimer;
     private int deadEnemies;
-    private bool startWave = false;
+   // private bool startWave = false;
    //update functie om de waveCount omhoog te gooien, en dan de wave te beginnen.
     private void Update()
     {

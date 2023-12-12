@@ -16,7 +16,7 @@ public class T1Stower : Basis
     //(Maar nog wel aangepast kan worden in Unity als je SerializeField er voor hebt)
     // bool staat voor Boolean, een variabele die alleen true of false kan zijn
     // StartWave is de naam van de variabel die wij willen gebruiken.
-    private bool StartWave = false;
+    // private bool StartWave = false;
 
     //Float staat voor getallen die een comma waarden kunnen hebben, zoals 1.5, 3.14, waarbij int(integer) alleen hele getallen kunnen zijn, zoals 1, 3.
     private float PersonalFireRate = 0.1f;

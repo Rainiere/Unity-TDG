@@ -295,6 +295,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09244c14263749e44bb5bc31aee095d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  UpgradeLevel: 0
+  Damage: 0
+  FireRate: 0
+  Range: 0
+  Camouflage: 0
   GoldValue: 1
   ProjectileList: []
   STowerLevels: []

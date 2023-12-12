@@ -36,8 +36,8 @@ public class playerLevens : MonoBehaviour
     // Update functie om de UI constant aan te passen.
     void Update()
     {
-        //Health.text = playerHealth.ToString();
-        //Gold.text = playerGold.ToString();
+        Health.text = playerHealth.ToString();
+        Gold.text = playerGold.ToString();
     }
 
     public int getPlayerGold()

@@ -100,6 +100,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: -4406727030793146763, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: -3636501195286251776, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -115,6 +119,14 @@ PrefabInstance:
     - target: {fileID: -2792386036043129231, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
       propertyPath: m_Layer
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: -2198888584636164399, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -2198888584636164399, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -2049929814205202405, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -256,6 +268,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 67cfcac580f4ba5488b5c128c00398a5, type: 2}
+    - target: {fileID: 5866666021909216657, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6371936846906434246, guid: dfb2d33bd7033ad44a16181452bbab1e, type: 3}
       propertyPath: m_Layer
       value: 6
@@ -328,7 +348,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8109113657f99b546be2d5cedae960ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  Speed: 5
   Damage: 1
   Health: 1
   Camouflage: 0

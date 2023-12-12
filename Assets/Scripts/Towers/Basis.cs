@@ -52,7 +52,6 @@ public class Basis : MonoBehaviour
         foreach (Collider coll in colls)
         {
             Enemy enemy = coll.GetComponent<Enemy>();
-            print(enemy);
             // || betkent "of", && betekent "en", == betekent "is gelijk aan?"
             if ((enemy.GetCamo() == false || Camouflage == true) && (enemy.GetEnumies() == _targetConditions || _targetConditions == Enumies.All))
             {
@@ -66,7 +65,6 @@ public class Basis : MonoBehaviour
     protected Enemy TargetFirstEnemy() {
         Enemy[] enemies = TargetAllEnemy();
         if (enemies.Length == 1) { return enemies[0]; }
-        if (enemies.Length > 0) { print(enemies); }
         // Vector2 gaat over coordinaten op de X en Y as, waarbij vector3 ook nog de Z as pakt.
         Vector2 currentFurthestEnemy = new(-1, Mathf.Infinity);
         Enemy enemyToTarget = null;

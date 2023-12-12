@@ -9,7 +9,7 @@ using UnityEngine;
 public class WesleyTower : BasisProjectile
 // Updaten naar WesleyTower, copy-pasted vanuit S1Tower
 {
-    [SerializeField] private STowerSO[] STowerLevels;
+    [SerializeField] private Wesley_Cannon_SO[] Wesley_Levels;
 
 
     //Private  betekent dat het niet aangepast kan worden vanuit andere scripts
@@ -68,11 +68,11 @@ public class WesleyTower : BasisProjectile
     //Functie die de lege setStats functie uitvoert, met override om die functie te kunnen bereiken, en hier te vullen met unieke data
     public override void setStats()
     {
-        if (UpgradeLevel >= STowerLevels.Length)
+        if (UpgradeLevel >= Wesley_Levels.Length)
         {
             print("Unable to upgrade, placeholder");
             return;
         }
-        BaseStats(STowerLevels[UpgradeLevel]);
+        BaseStats(Wesley_Levels[UpgradeLevel]);
     }
 }
