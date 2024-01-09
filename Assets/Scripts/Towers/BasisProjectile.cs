@@ -6,7 +6,7 @@ using UnityEngine;
 public class BasisProjectile : Basis
 {
 
-    [SerializeField] private ProjectileBase[] ProjectileList;
+    [SerializeField] protected ProjectileBase[] ProjectileList;
 
 
 }

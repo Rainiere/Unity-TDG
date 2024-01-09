@@ -7,7 +7,7 @@ public class Tile : MonoBehaviour
 {
     private Ray ray;
     private RaycastHit raycastHit;
-    private float sphereCastRadius = 2.0f;
+//    private float sphereCastRadius = 2.0f;
         
     //Variabele om te declareren of er op een tile een toren neergezet mag worden of niet.
     [SerializeField] private bool buildable;

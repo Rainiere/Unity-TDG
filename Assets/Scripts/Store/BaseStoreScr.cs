@@ -8,7 +8,7 @@ using UnityEngine.UI;
 public class BaseStoreScr : MonoBehaviour
 {
     private Tile hitTarget;
-    private bool PlacerActive = false;
+ //   private bool PlacerActive = false;
     private Basis TowerToSelect;
 
     private playerLevens _player;

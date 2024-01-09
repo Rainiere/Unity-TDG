@@ -12,7 +12,7 @@ public class playerLevens : MonoBehaviour
     [SerializeField] private int playerMaxHealth;
 
     [SerializeField] private int playerGold;
-    [SerializeField] private int playerMaxGold = 9999;
+//    [SerializeField] private int playerMaxGold = 9999;
     //Unity import voor de UI.
     [SerializeField] TMP_Text Health;
     [SerializeField] TMP_Text Gold;

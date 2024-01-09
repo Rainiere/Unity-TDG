@@ -13,6 +13,9 @@ public class Basis : MonoBehaviour
     [SerializeField] protected bool Camouflage;
     [SerializeField] protected int GoldValue;
 
+    [SerializeField] private GameObject _AnimatorHolder;
+    protected Animator _Animator;
+
     // LayerMask is een uniek iets uit Unity, waarbij je de Layers kunt aanroepen.
     protected LayerMask _layer;
 
@@ -27,6 +30,7 @@ public class Basis : MonoBehaviour
     {
         _layer = LayerMask.GetMask("Enemy");
         setStats();
+        _Animator = _AnimatorHolder.GetComponent<Animator>();
     }
 
     void Update()
@@ -100,6 +104,10 @@ public class Basis : MonoBehaviour
 
     }
 
+    public Animator GetAnimator()
+    {
+        return _Animator;
+    }
     // OnDrawGizmos() is een Unity functie om een visuele indicatie van de hiervoorgenoemde collider te krijgen.
     private void OnDrawGizmos()
     {

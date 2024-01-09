@@ -24,6 +24,10 @@ public class Enemy : MonoBehaviour
     //Variabelen om de eerste vijand te berekenen binnenin de targetting area van towers.
     private int Checkpoints;
     float distanceTo_Waypoint;
+
+    [SerializeField] private Animator Take_Damage_Animator;
+
+
     //Functie om vijanden sneller/langzamer te maken
     public void SetSpeed(int _Speed)
     {
@@ -56,6 +60,9 @@ public class Enemy : MonoBehaviour
     //Functie waarin de enemy damage ontvant, inclusief wat er gebeurt als de enemy op of onder 0 health komt.
     public void TakeDamage(int damageToTake)
     {
+        print("Ouch!");
+        Take_Damage_Animator.ResetTrigger("Taking_Damage");
+        Take_Damage_Animator.SetTrigger("Taking_Damage");
         Health -= damageToTake;
         if(Health <= 0) { Death(); }
         
@@ -82,9 +89,8 @@ public class Enemy : MonoBehaviour
     {
         setupPath();
         _player = FindObjectOfType<playerLevens>();
-
+        Take_Damage_Animator = Take_Damage_Animator.GetComponent<Animator>();
         _spawner = FindObjectOfType<Spawner>();
-
     }
 
     //Update functie die het bewegen van de enemies regelt.

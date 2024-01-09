@@ -5,23 +5,23 @@ using UnityEngine.SocialPlatforms;
 
 public class UIScript : MonoBehaviour
 {
-    [SerializeField] private GameObject GameplayUI;
-                             private bool GaUIActive = true;
+    //[SerializeField] private GameObject GameplayUI;
+    //                         private bool GaUIActive = true;
     [SerializeField] private GameObject StoreUI;
                              private bool StUIActive = false;
 
 
-    public void ToggleGameplayUI()
-    {
-        Time.timeScale = 0;
-        GameplayUI.SetActive(GaUIActive);
-        GaUIActive = !GaUIActive;
-    }
+    //public void ToggleGameplayUI()
+    //{
+    //    GameplayUI.SetActive(GaUIActive);
+    //    GaUIActive = !GaUIActive;
+    //}
 
     public void ToggleStoreUI()
     {
-        StoreUI.SetActive(StUIActive);
         StUIActive = !StUIActive;
-        Time.timeScale = 1;
+        StoreUI.SetActive(StUIActive);
+        
+        Time.timeScale = StUIActive ? 0 : 1;
     }
 }
